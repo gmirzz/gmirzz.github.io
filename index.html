@@ -53,6 +53,15 @@ section h2{font-size:38px;margin-bottom:30px}
 .bot p{color:#b9bdc8;margin-bottom:24px}
 .bot ul{list-style:none;display:grid;gap:10px}
 .bot li{background:#1d2028;border-radius:14px;padding:13px 16px;color:#e6e8ee}
+.auto{background:#fff;border:1px solid var(--line);border-radius:28px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.auto p{color:var(--ink2);margin-bottom:24px}
+.flow{display:grid;gap:10px;counter-reset:f}
+.fl{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:14px 16px;position:relative}
+.fl+.fl:before{content:"";position:absolute;left:37px;top:-11px;width:2px;height:10px;background:var(--line)}
+.fl i{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:20px;font-style:normal;background:#fff;border:1px solid var(--line)}
+.fl b{display:block;font-size:15px}
+.fl span{color:var(--mute);font-size:13px}
+.fl.hot{background:#111318;border-color:#111318;color:#fff}.fl.hot span{color:#b9bdc8}.fl.hot i{background:#1d2028;border-color:#2a2e38}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .st{border-top:2px solid var(--ink);padding-top:16px}
 .st b{font:800 14px Unbounded;color:var(--b)}
@@ -65,8 +74,8 @@ section h2{font-size:38px;margin-bottom:30px}
 footer{padding:40px 0;color:var(--mute);font-size:14px;text-align:center}
 @media (max-width:860px){
   .hero h1{font-size:36px}
-  .services,.works,.bot,.steps{grid-template-columns:1fr}
-  .bot,.cta{padding:28px 20px}
+  .services,.works,.bot,.steps,.auto{grid-template-columns:1fr}
+  .bot,.cta,.auto{padding:28px 20px}
   section h2{font-size:28px}
   .wrap{padding:0 16px}
   header .btn span{display:none}
@@ -83,7 +92,7 @@ footer{padding:40px 0;color:var(--mute);font-size:14px;text-align:center}
   <div class="services">
     <div class="sv"><div class="ic">🌐</div><h3>Сайт или лендинг</h3><p>Под телефон, с онлайн-записью или калькулятором цены. Домен и хостинг оформлю на вас.</p><b>от 10 000 ₽</b><small>3–5 дней</small></div>
     <div class="sv"><div class="ic">🤖</div><h3>Telegram-бот</h3><p>Запись, заказы, сертификаты, заявки. Напоминания клиентам, уведомления вам.</p><b>от 7 000 ₽</b><small>3–5 дней</small></div>
-    <div class="sv"><div class="ic">⚙️</div><h3>Автоматизация</h3><p>Заявки с сайта, Авито и мессенджеров — в один чат и таблицу. Отчёты каждое утро.</p><b>от 5 000 ₽</b><small>3–7 дней</small></div>
+    <div class="sv"><div class="ic">⚙️</div><h3>Автоматизация</h3><p>Заявки с сайта, Авито и мессенджеров — в один чат и таблицу. Отчёт за день. <a href="#auto" style="color:var(--a);font-weight:600">Демо →</a></p><b>от 5 000 ₽</b><small>3–7 дней</small></div>
   </div>
 </div></div>
 
@@ -99,6 +108,17 @@ footer{padding:40px 0;color:var(--mute);font-size:14px;text-align:center}
 <section style="padding-top:0"><div class="wrap"><div class="bot">
   <div><div class="lbl" style="color:#8b91a0">Telegram-боты</div><h2>Боты, которые можно попробовать прямо сейчас</h2><p>Откройте демо-бота, выберите пример и пройдите его как клиент — запись, сертификат, заказ торта, заявка в сервис.</p><a class="btn" style="background:#fff;color:var(--ink)" href="https://t.me/demopotbot" target="_blank" rel="noopener">Открыть демо-бота →</a></div>
   <ul><li>💅 Запись в салон с выбором мастера</li><li>✂️ Барбершоп: возврат клиентов через 4 недели</li><li>🎁 Продажа подарочных сертификатов</li><li>🔧 Заявки сервиса в рабочий чат</li></ul>
+</div></div></section>
+
+<section id="auto" style="padding-top:0"><div class="wrap"><div class="auto">
+  <div><div class="lbl">Автоматизация</div><h2>Ни одна заявка не теряется</h2><p>Заявки с сайта, Авито и Instagram сами приходят вам в Telegram и попадают в таблицу. Если никто не ответил за 15 минут, бот напомнит. Вечером вам приходит итог дня: сколько заявок, откуда и на какую сумму.</p><p style="margin-top:-12px">В демо вы сначала оставляете заявку как клиент, а потом получаете её как владелец, вместе с настоящим Excel-файлом.</p><a class="btn btn-dark" href="https://t.me/demopotbot?start=auto" target="_blank" rel="noopener">Попробовать демо →</a></div>
+  <div class="flow">
+    <div class="fl"><i>📝</i><div><b>Клиент оставляет заявку</b><span>сайт · Авито · Instagram · WhatsApp</span></div></div>
+    <div class="fl hot"><i>🔔</i><div><b>Карточка заявки в Telegram</b><span>вам или в чат менеджеров, с кнопками «Взять в работу»</span></div></div>
+    <div class="fl"><i>📄</i><div><b>Строка в Google-таблице</b><span>источник, время, статус, сумма</span></div></div>
+    <div class="fl"><i>⏰</i><div><b>Напоминание</b><span>если на заявку не ответили 15 минут</span></div></div>
+    <div class="fl"><i>📊</i><div><b>Отчёт владельцу</b><span>итог дня: заявки, время ответа, выручка</span></div></div>
+  </div>
 </div></div></section>
 
 <section style="padding-top:0"><div class="wrap">
